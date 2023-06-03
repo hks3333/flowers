@@ -11,12 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-
+    const up = document.getElementById('up');
+    up.addEventListener('click', () => {
+        document.getElementById('uploads').style.display = 'flex';
+    })
 
 
     const PROJECT = 'all';
     const API_URL = 'https://my-api.plantnet.org/v2/identify/' + PROJECT;
-
     const API_KEY = '2b10QAoQhFCUiI9YSnliKcm0fu';
 
     const identify = async () => {
@@ -58,7 +60,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-
     const form = document.getElementById('myform');
     form.addEventListener('submit', (evt) => {
         evt.preventDefault();
@@ -66,4 +67,22 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
+
+
+    const pictureInput = document.getElementById('picture');
+    const picturePreview = document.getElementById('preview');
+
+    pictureInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+
+        if (file) {
+            document.getElementById('preview').style.display = 'block';
+            const reader = new FileReader();
+            reader.addEventListener('load', (readerEvent) => {
+            picturePreview.setAttribute('src', readerEvent.target.result);
+            });
+
+            reader.readAsDataURL(file);
+        }
+    });
 });
