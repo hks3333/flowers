@@ -46,7 +46,20 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 response.json()
                 .then((r) => {
-                    document.getElementById('results').innerHTML = JSON.stringify(r);
+                    const name = r.results[0].species.scientificNameWithoutAuthor;
+                    const images = r.results[0].images;
+                    document.getElementById('results').innerHTML = name;
+                    const picturePreview = document.getElementById('preview');
+                   
+                    const reader = new FileReader();
+                    reader.addEventListener('load', (readerEvent) => {
+                    picturePreview.setAttribute('src', images);
+                    });
+
+                    reader.readAsDataURL(file);
+                
+
+
                 })
                 .catch(console.error);
             } else {
