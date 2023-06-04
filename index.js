@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
             form.append('images', images[i]);
         }
         const url = new URL(API_URL);
-        url.searchParams.append('include-related-images', 'true'); // try false
+        url.searchParams.append('include-related-images', 'true');
         url.searchParams.append('api-key', API_KEY);
 
         fetch(url.toString(), {
@@ -49,15 +49,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     const name = r.results[0].species.scientificNameWithoutAuthor;
                     const images = r.results[0].images;
                     document.getElementById('results').innerHTML = name;
-                    const picturePreview = document.getElementById('preview');
-                   
-                    const reader = new FileReader();
-                    reader.addEventListener('load', (readerEvent) => {
-                    picturePreview.setAttribute('src', images);
-                    });
 
-                    reader.readAsDataURL(file);
-                
+                    const targetElement = document.getElementById('result-id');
+                    const imgElement = document.createElement('img');
+                    imgElement.src = images;
+                    targetElement.appendChild(imgElement);
+                    
 
 
                 })
@@ -76,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function() {
     form.addEventListener('submit', (evt) => {
         evt.preventDefault();
         identify();
+        document.getElementById('results').innerHTML = "Identifying!!";
     });
 
 

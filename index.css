@@ -227,10 +227,9 @@ body {
     margin: 10px 0;
     display: none;
     max-height: 50vh;
+    transition: 0.4s;
 }
 #results {
-    height: 500vh;
-    width: 90vw;
     color: #ffffff;
     font-size: 20px;
 }
