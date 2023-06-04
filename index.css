@@ -174,7 +174,7 @@ body {
     align-items: center;
     color: rgb(196, 201, 206);
     position: absolute;
-    height: 70vh;
+    height: 80vh;
     width: 80vw;
     top: 50%;
     left: 50%;
@@ -184,9 +184,20 @@ body {
     font-family: "Work Sans";
     font-size: 30px;
     padding: 20px;
+    margin-top: 30px;
     border: 2px solid rgb(255, 202, 202);
 }
-
+.upper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.upper button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
 #picture {
     display: none;
 }
@@ -203,7 +214,7 @@ body {
     text-align: center;
     font-family: 'Nunito';
     transition: 0.15s ease-in-out;
-    padding-top: 6px;
+    padding-top: 7px;
 }
 #submit-btn {
     display: none;
@@ -226,8 +237,10 @@ body {
 #preview {
     margin: 10px 0;
     display: none;
-    max-height: 50vh;
+    max-height: 40vh;
     transition: 0.4s;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
 }
 #results {
     color: #ffffff;

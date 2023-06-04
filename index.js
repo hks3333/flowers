@@ -47,16 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 response.json()
                 .then((r) => {
                     const name = r.results[0].species.scientificNameWithoutAuthor;
-                    const images = r.results[0].images;
                     document.getElementById('results').innerHTML = name;
-
-                    const targetElement = document.getElementById('result-id');
-                    const imgElement = document.createElement('img');
-                    imgElement.src = images;
-                    targetElement.appendChild(imgElement);
-                    
-
-
                 })
                 .catch(console.error);
             } else {
@@ -96,3 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+function closer() {
+    document.getElementById('uploads').style.display = 'none';
+}

@@ -47,17 +47,20 @@
 
 
     <section class="uploads" id="uploads">
-      <form id="myform">
-        <label id="pic-adder">
-          Upload Image
-          <input id="picture" type="file">
-        </label>
-      
-      <label id="submit-label">
-        Identify
-        <input id="submit-btn" type="submit" value="Identify">
-      </label>
-    </form>
+      <div class="upper">
+        <div></div>
+        <form id="myform">
+          <label id="pic-adder">
+            Upload Image
+            <input id="picture" type="file">
+          </label>
+          <label id="submit-label">
+            Identify
+            <input id="submit-btn" type="submit" value="Identify">
+          </label>
+        </form>
+        <button onclick="closer()"><img src="close.png"></button>
+    </div>
     <img src="#" id="preview"></img>
     <div id="result-id">
       <pre id="results" style="white-space: break-spaces;">
