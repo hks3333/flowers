@@ -17,10 +17,11 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 
 
+
+
     const PROJECT = 'all';
     const API_URL = 'https://my-api.plantnet.org/v2/identify/' + PROJECT;
     const API_KEY = '2b10QAoQhFCUiI9YSnliKcm0fu';
-
     const identify = async () => {
         const fileInput = document.getElementById('picture');
         const images = fileInput.files;
@@ -28,13 +29,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('choose a file');
             return false;
         }
-
         const form = new FormData();
         for (let i = 0; i < images.length; i += 1) {
             form.append('organs', 'auto');
             form.append('images', images[i]);
         }
-
         const url = new URL(API_URL);
         url.searchParams.append('include-related-images', 'true'); // try false
         url.searchParams.append('api-key', API_KEY);
