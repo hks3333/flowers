@@ -228,3 +228,9 @@ body {
     display: none;
     max-height: 50vh;
 }
+#results {
+    height: 500vh;
+    width: 90vw;
+    color: #ffffff;
+    font-size: 20px;
+}
